@@ -1,0 +1,31 @@
+<!--User's Home View: Show -->
+
+<div class="topSec">
+	<h2>Blog Title: <%= @user.blog.title %></h2>
+	<h2>User: <%= @user.name %></h2>
+	<p class="subSec">'User’s blog home page with a list of the blog’s posts'</p>
+
+	<div class="table" id="bsTable">
+		<table class="table table-bordered table-hover table-responsive">
+			<thead>
+				<tr>
+					<th>Blog Posts</th>
+					<% if session[:user_id] == @user.id %>
+					<th>Action</th>
+				</tr>
+					<% end %>
+			</thead>
+			<tbody>
+				<% @user.blog.posts.each do |p| %>
+				<tr>
+					<td class="post_links"><a href="/posts/<%= p.id %>"><%= p.title %></a></td>
+	
+					<% if session[:user_id] == @user.id %>
+					<td><a href="/posts/<%= p.id %>/edit">Edit</a> | <a href="/posts/<%= p.id %>" data-method='delete'>Delete</a></td>
+				</tr>
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>
+	</div><!--end of table div-->
+</div><!--end of topSec div-->

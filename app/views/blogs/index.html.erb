@@ -1,0 +1,15 @@
+<div class="topSec">
+	<div class="table" id="bsTable">
+	<h1>Blog Index</h1>
+		<table class="table table-bordered table-hover table-responsive">
+			<tbody>
+				<% @blogs.each do |b| %>
+				<tr>
+					<td class="blog_links"><a href="/users/<%= b.user.id %>"><%= b.title %></a></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div><!--end of table div-->
+</div><!--end of topSec div-->
+

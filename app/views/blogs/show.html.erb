@@ -1,0 +1,10 @@
+<!-- Blog Partial: Show--> 
+
+<div class="topSec">
+	<h1>Blog by Blog_ID</h1>
+
+	<div class="blog_id">
+		<h3><%= @blog.title %></h3>
+		<p>written by: <a href="/users/<%= @blog.user.id %>"><%= @blog.user.name %></a></p>
+	</div>	
+</div><!--end of topSec div -->

@@ -1,0 +1,64 @@
+<div class="login_reg">
+
+	<h1>Welcome!</h1>
+
+	<div class="create_container">
+	<h6>Register here...</h6>
+		<form action='/users/register' method='post'>
+
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+				
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" name="Name">
+			</div>
+
+			<div class="form-group">
+				<label for="Email">Email</label>
+				<input type="email" class="form-control" name="Email">
+			</div>
+
+			<div class="form-group">
+				<label for="Password">Password</label>
+				<input type="password" class="form-control" name="Password">
+			</div>
+
+			<div class="form-group">
+				<label for="Password_confirmation">Password Confirmation</label>
+				<input type="password" class="form-control" name="Password_Confirmation">
+			</div> 
+
+			<div class="form-group">
+				<label for="blog_title">Blog Title</label>
+				<input type="text" class="form-control" name="blog_title">
+			</div> 
+
+			<button type="submit" class="btn btn-default">Register</button>
+		</form>
+	</div><!--end create_container-->
+
+	<% if flash[:errors] %>
+		<% flash[:errors].each do |msg| %>
+		<p style="color: red;"><%= msg %></p>
+		<% end %>
+	<% end %>
+
+	<div class="login_container">
+	<h6>Already a member? Sign in here...</h6>
+		<form action='/sessions/create' method='post'>
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" name="Email">
+			</div>
+
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" class="form-control" name="Password">
+			</div>
+
+			<button type="submit" class="btn btn-default">Login</button>
+		</form>
+	</div><!--end of login_container div-->
+</div><!--end login_reg div-->
