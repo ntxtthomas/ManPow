@@ -49,3 +49,4 @@ gem "hirb"
 # gem 'rails-footnotes', '>= 4.0.0', '<5'
 
 
+
