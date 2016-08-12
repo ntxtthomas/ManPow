@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160811175816) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "blogs", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160811175816) do
     t.string   "title"
   end
 
-  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id"
+  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "content"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20160811175816) do
     t.string   "title"
   end
 
-  add_index "posts", ["blog_id"], name: "index_posts_on_blog_id"
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+  add_index "posts", ["blog_id"], name: "index_posts_on_blog_id", using: :btree
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -42,4 +45,7 @@ ActiveRecord::Schema.define(version: 20160811175816) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "blogs", "users"
+  add_foreign_key "posts", "blogs"
+  add_foreign_key "posts", "users"
 end
