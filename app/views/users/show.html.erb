@@ -10,13 +10,14 @@
 			<thead>
 				<tr>
 					<th>Blog Posts</th>
+
 					<% if session[:user_id] == @user.id %>
 					<th>Action</th>
 				</tr>
 					<% end %>
 			</thead>
 			<tbody>
-				<% @user.blog.posts.each do |p| %>
+				<% @user.posts.each do |p| %>
 				<tr>
 					<td class="post_links"><a href="/posts/<%= p.id %>"><%= p.title %></a></td>
 	
@@ -28,4 +29,30 @@
 			</tbody>
 		</table>
 	</div><!--end of table div-->
+
+
+	<% if session[:user_id] == @user.id %>
+	<div class="mk_blog">
+	<h3>Create a new post...</h3>
+		<form action="/posts/new" method="post">
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			<div class="form-group">
+				<label>Title</label>
+				<input type="text" class="form-control" name="title">
+			</div>
+			<div class="form-group">
+				<label >Content</label>
+				<textarea class="form-control" rows="5" name="content"></textarea>
+			</div>
+			
+			<button type="submit" class="btn btn-default">Create Post</button>
+		</form>
+	</div><!--end of mk_blog div-->
+	<% end %>
+
+	<% if flash[:errors] %>
+		<% flash[:errors].each do |msg| %>
+		<p style="color: red;"><%= msg %></p>
+		<% end %>
+	<% end %>
 </div><!--end of topSec div-->

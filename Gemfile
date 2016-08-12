@@ -46,6 +46,6 @@ group :development do
   gem 'spring'
 end
 gem "hirb"
-gem 'rails-footnotes', '>= 4.0.0', '<5'
+# gem 'rails-footnotes', '>= 4.0.0', '<5'
 
 
