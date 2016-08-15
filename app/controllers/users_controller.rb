@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(name: params[:Name], email: params[:Email], password: params[:Password], password_confirmation: params[:Password_Confirmation])
+    user = User.new(name: params[:Name], email: params[:Email], password: params[:Password], password_confirmation: params[:Password_Confirmation], blog_title: params[:blog_title])
     if user.save
       session[:user_id] = user.id
       flash[:success] = "User created!"
