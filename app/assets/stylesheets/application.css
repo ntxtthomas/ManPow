@@ -23,7 +23,7 @@
 	max-width: 85%;
 	margin: 0 auto; 
 }
-	.table h1, .login_reg h1, .topSec h2, .topSec h1, .subSec {
+	.table h1, .login_reg h1, .topSec h2, .topSec h1, .subSec, .gravatar {
 		color: white;
 		text-align: center;
 		font-weight: 700; 
@@ -51,6 +51,7 @@
 	background-color: #87C8D9;
 	padding: 15rem; 
 }
+
 .blog_id  {
 	color: white;
 	font-weight: 600; 

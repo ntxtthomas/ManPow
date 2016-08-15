@@ -2,6 +2,7 @@
 
 <div class="topSec">
 	<h2>Blog Title: <%= @user.blog.title %></h2>
+	<div class="gravatar">Gravatar Image: <p><%= image_tag avatar_url(@user)%></p></div>
 	<h2>User: <%= @user.name %></h2>
 	<p class="subSec">'User’s blog home page with a list of the blog’s posts'</p>
 
