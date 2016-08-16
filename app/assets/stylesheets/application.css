@@ -3,23 +3,10 @@
 	padding: 0;
 	font-family: 'Montserrat',sans-serif;
 }
-.navbar {
-	height: 100px; 
-	padding: auto 5px; 
-}
-.logo {
-	width: 30%;
-	min-width: 22%; 
-}
-.navbar-brand {
-	width: 756px;
-	height: 30px;
-	padding: 10px;
-}
 .nav li {
 	margin-top: 20px; 
 }
-#bsTable, .create_container, .login_container, .summary_container, .mk_blog {
+#bsTable, .summary_container, .mk_blog {
 	max-width: 85%;
 	margin: 0 auto; 
 }
@@ -38,18 +25,12 @@
 }
 .create_container, .login_container {
 	color: white;
-	width: 40%; 
-	margin: 0 auto;
-	display: inline-block;
-	vertical-align: top;
+	
 }
-.create_container {
-	margin-right: 15rem; 
-}	
+
 .topSec, .login_reg, .summary {
-	width: 100%;
 	background-color: #87C8D9;
-	padding: 15rem; 
+	padding: 15rem 0; 
 }
 
 .blog_id  {

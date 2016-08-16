@@ -1,8 +1,8 @@
 <div class="login_reg">
-
+<div class="container">
 	<h1>Welcome!</h1>
-
-	<div class="create_container">
+<div class="row">
+	<div class="create_container col-md-4 col-md-offset-2">
 	<h6>Register here...</h6>
 		<form action='/users/register' method='post'>
 
@@ -37,13 +37,9 @@
 		</form>
 	</div><!--end create_container-->
 
-	<% if flash[:errors] %>
-		<% flash[:errors].each do |msg| %>
-		<p style="color: red;"><%= msg %></p>
-		<% end %>
-	<% end %>
 
-	<div class="login_container">
+
+	<div class="login_container col-md-4">
 	<h6>Already a member? Sign in here...</h6>
 		<form action='/sessions/create' method='post'>
 			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -61,4 +57,12 @@
 			<button type="submit" class="btn btn-default">Login</button>
 		</form>
 	</div><!--end of login_container div-->
+</div><!--end of row div-->
+		<% if flash[:errors] %>
+		<% flash[:errors].each do |msg| %>
+		<p style="color: red;"><%= msg %></p>
+		<% end %>
+	<% end %>
+
+</div>
 </div><!--end login_reg div-->
